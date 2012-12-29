@@ -1,0 +1,417 @@
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (1.0ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (0.6ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (1.0ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+Migrating to CreateTs (20121114081316)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  CREATE TABLE "ts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "words" varchar(255), "meanings" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20121114081316')[0m
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+
+
+Started GET "/assets/rails.png" for 127.0.0.1 at 2012-12-26 18:04:52 +0800
+Connecting to database specified by database.yml
+Served asset /rails.png - 200 OK (3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-12-26 18:05:07 +0800
+Processing by TsController#index as HTML
+  [1m[36mT Load (0.1ms)[0m  [1mSELECT "ts".* FROM "ts" [0m
+  Rendered ts/index.html.erb within layouts/application (2.5ms)
+Compiled application.css  (0ms)  (pid 9128)
+Compiled jquery.js  (1ms)  (pid 9128)
+Compiled jquery_ujs.js  (0ms)  (pid 9128)
+Compiled application.js  (33ms)  (pid 9128)
+Completed 200 OK in 105ms (Views: 83.2ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-12-26 18:05:07 +0800
+Served asset /application.css - 200 OK (2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-12-26 18:05:07 +0800
+Served asset /jquery.js - 200 OK (3ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-12-26 18:05:07 +0800
+Served asset /jquery_ujs.js - 200 OK (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-12-26 18:05:07 +0800
+Served asset /application.js - 200 OK (3ms)
+
+
+Started GET "/ts/translate?utf8=%E2%9C%93&words=free&commit=Translate" for 127.0.0.1 at 2012-12-26 18:05:11 +0800
+Processing by TsController#translate as HTML
+  Parameters: {"utf8"=>"✓", "words"=>"free", "commit"=>"Translate"}
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "ts" WHERE "ts"."words" = 'free'
+Completed 500 Internal Server Error in 8ms
+
+NameError (uninitialized constant TsController::HTTParty):
+  app/controllers/ts_controller.rb:15:in `translate'
+
+
+  Rendered /Users/jin/.rvm/gems/ruby-1.9.3-p327/gems/actionpack-3.2.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  Rendered /Users/jin/.rvm/gems/ruby-1.9.3-p327/gems/actionpack-3.2.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.8ms)
+  Rendered /Users/jin/.rvm/gems/ruby-1.9.3-p327/gems/actionpack-3.2.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (8.4ms)
+
+
+Started GET "/ts/translate?utf8=%E2%9C%93&words=free&commit=Translate" for 127.0.0.1 at 2012-12-26 18:06:24 +0800
+Connecting to database specified by database.yml
+Processing by TsController#translate as HTML
+  Parameters: {"utf8"=>"✓", "words"=>"free", "commit"=>"Translate"}
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "ts" WHERE "ts"."words" = 'free'[0m
+Completed 500 Internal Server Error in 38ms
+
+NameError (uninitialized constant TsController::HTTParty):
+  app/controllers/ts_controller.rb:15:in `translate'
+
+
+  Rendered /Users/jin/.rvm/gems/ruby-1.9.3-p327/gems/actionpack-3.2.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  Rendered /Users/jin/.rvm/gems/ruby-1.9.3-p327/gems/actionpack-3.2.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.7ms)
+  Rendered /Users/jin/.rvm/gems/ruby-1.9.3-p327/gems/actionpack-3.2.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (7.6ms)
+
+
+Started GET "/ts/translate?utf8=%E2%9C%93&words=free&commit=Translate" for 127.0.0.1 at 2012-12-26 18:07:36 +0800
+Processing by TsController#translate as HTML
+  Parameters: {"utf8"=>"✓", "words"=>"free", "commit"=>"Translate"}
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "ts" WHERE "ts"."words" = 'free'
+Completed 500 Internal Server Error in 2ms
+
+NameError (uninitialized constant TsController::HTTParty):
+  app/controllers/ts_controller.rb:15:in `translate'
+
+
+  Rendered /Users/jin/.rvm/gems/ruby-1.9.3-p327/gems/actionpack-3.2.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  Rendered /Users/jin/.rvm/gems/ruby-1.9.3-p327/gems/actionpack-3.2.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.8ms)
+  Rendered /Users/jin/.rvm/gems/ruby-1.9.3-p327/gems/actionpack-3.2.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (6.2ms)
+
+
+Started GET "/ts/translate?utf8=%E2%9C%93&words=free&commit=Translate" for 127.0.0.1 at 2012-12-26 18:07:45 +0800
+Connecting to database specified by database.yml
+Processing by TsController#translate as HTML
+  Parameters: {"utf8"=>"✓", "words"=>"free", "commit"=>"Translate"}
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "ts" WHERE "ts"."words" = 'free'[0m
+Completed 500 Internal Server Error in 4724ms
+
+NoMethodError (undefined method `t_count=' for #<T:0x007faf3c37b278>):
+  app/controllers/ts_controller.rb:21:in `translate'
+
+
+  Rendered /Users/jin/.rvm/gems/ruby-1.9.3-p327/gems/actionpack-3.2.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
+  Rendered /Users/jin/.rvm/gems/ruby-1.9.3-p327/gems/actionpack-3.2.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.7ms)
+  Rendered /Users/jin/.rvm/gems/ruby-1.9.3-p327/gems/actionpack-3.2.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (6.9ms)
+
+
+Started GET "/ts/translate?utf8=%E2%9C%93&words=free&commit=Translate" for 127.0.0.1 at 2012-12-26 18:07:53 +0800
+Processing by TsController#translate as HTML
+  Parameters: {"utf8"=>"✓", "words"=>"free", "commit"=>"Translate"}
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "ts" WHERE "ts"."words" = 'free'
+Completed 500 Internal Server Error in 266ms
+
+NoMethodError (undefined method `t_count=' for #<T:0x007faf40f7c2f8>):
+  app/controllers/ts_controller.rb:21:in `translate'
+
+
+  Rendered /Users/jin/.rvm/gems/ruby-1.9.3-p327/gems/actionpack-3.2.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+  Rendered /Users/jin/.rvm/gems/ruby-1.9.3-p327/gems/actionpack-3.2.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.8ms)
+  Rendered /Users/jin/.rvm/gems/ruby-1.9.3-p327/gems/actionpack-3.2.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (7.1ms)
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (1.0ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+Migrating to CreateTs (20121114081316)
+  [1m[36m (0.0ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mDROP TABLE "ts"[0m
+  [1m[35m (0.1ms)[0m  DELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20121114081316'
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateTs (20121114081316)
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mCREATE TABLE "ts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "words" varchar(255), "meanings" text, "t_count" integer, "level" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20121114081316')
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+
+
+Started GET "/ts/translate?utf8=%E2%9C%93&words=free&commit=Translate" for 127.0.0.1 at 2012-12-26 18:10:25 +0800
+Processing by TsController#translate as HTML
+  Parameters: {"utf8"=>"✓", "words"=>"free", "commit"=>"Translate"}
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "ts" WHERE "ts"."words" = 'free'[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (31.6ms)[0m  [1mINSERT INTO "ts" ("created_at", "level", "meanings", "t_count", "updated_at", "words") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Wed, 26 Dec 2012 10:10:25 UTC +00:00], ["level", nil], ["meanings", "{\"translation\":[\"免费\"],\"basic\":{\"phonetic\":\"fri:\",\"explains\":[\"adj. 免费的；自由的，不受约束的；[化学] 游离的\",\"vt. 使自由，解放；释放\",\"adv. 自由地；免费\"]},\"query\":\"free\",\"errorCode\":0,\"web\":[{\"value\":[\"自由\",\"免费\",\"空闲的\",\"释放\"],\"key\":\"Free\"},{\"value\":[\"自由软件\",\"自由软体\",\"免费软件\",\"软件\"],\"key\":\"free software\"},{\"value\":[\"自由落体\",\"自由降落\",\"自由下坠\",\"自由下落\"],\"key\":\"free fall\"},{\"value\":[\"自由表面\",\"自由面\",\"自由液面\",\"游离面\"],\"key\":\"free surface\"},{\"value\":[\"自由贸易\",\"自由贸易\",\"二手\",\"自由商业\"],\"key\":\"free trade\"},{\"value\":[\"自由区\",\"免税区\",\"自由地带\",\"对无核区承担义务\"],\"key\":\"Free Zone\"},{\"value\":[\"公众持股量\",\"自由浮动时间\",\"指由机构投资者及公众投资者所持有的股份总数占公司已发行股票总数的百分比\",\"自由浮动\"],\"key\":\"free float\"},{\"value\":[\"不执拍手\",\"徒手\",\"全权处理\",\"徒手画\"],\"key\":\"Free hand\"},{\"value\":[\"随便\",\"感受自由\",\"随你便\",\"轻松\"],\"key\":\"feel free\"},{\"value\":[\"自由国度\",\"自由国家\",\"自由领域\",\"解放国度\"],\"key\":\"Free Realms\"}]}"], ["t_count", 1], ["updated_at", Wed, 26 Dec 2012 10:10:25 UTC +00:00], ["words", "free"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36mT Load (0.1ms)[0m  [1mSELECT "ts".* FROM "ts" [0m
+  Rendered ts/translate.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 373ms (Views: 10.0ms | ActiveRecord: 32.9ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-12-26 18:10:25 +0800
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-12-26 18:10:25 +0800
+Served asset /jquery_ujs.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-12-26 18:10:25 +0800
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-12-26 18:10:25 +0800
+Served asset /application.js - 304 Not Modified (2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-12-26 18:10:30 +0800
+Processing by TsController#index as HTML
+  [1m[35mT Load (0.2ms)[0m  SELECT "ts".* FROM "ts" 
+  Rendered ts/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 7ms (Views: 5.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-12-26 18:10:30 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-12-26 18:10:30 +0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-12-26 18:10:30 +0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-12-26 18:10:30 +0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/ts/translate?words=free" for 127.0.0.1 at 2012-12-26 18:10:35 +0800
+Processing by TsController#translate as HTML
+  Parameters: {"words"=>"free"}
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "ts" WHERE "ts"."words" = 'free'[0m
+  [1m[35mT Load (0.1ms)[0m  SELECT "ts".* FROM "ts" WHERE "ts"."words" = 'free'
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  UPDATE "ts" SET "t_count" = 2, "updated_at" = '2012-12-26 10:10:35.034199' WHERE "ts"."id" = 1
+  [1m[36m (2.4ms)[0m  [1mcommit transaction[0m
+  [1m[35mT Load (0.1ms)[0m  SELECT "ts".* FROM "ts" 
+  Rendered ts/translate.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 29ms (Views: 21.9ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-12-26 18:10:35 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-12-26 18:10:35 +0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-12-26 18:10:35 +0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-12-26 18:10:35 +0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/ts/list" for 127.0.0.1 at 2012-12-26 18:10:37 +0800
+Processing by TsController#list as HTML
+  [1m[36mT Load (0.1ms)[0m  [1mSELECT "ts".* FROM "ts" LIMIT 1 OFFSET 0[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "ts" 
+  Rendered ts/list.erb within layouts/application (7.9ms)
+Completed 200 OK in 13ms (Views: 10.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-12-26 18:10:37 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-12-26 18:10:37 +0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-12-26 18:10:37 +0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-12-26 18:10:37 +0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/ts/translate?utf8=%E2%9C%93&words=king&commit=Translate" for 127.0.0.1 at 2012-12-26 18:10:52 +0800
+Processing by TsController#translate as HTML
+  Parameters: {"utf8"=>"✓", "words"=>"king", "commit"=>"Translate"}
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "ts" WHERE "ts"."words" = 'king'[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "ts" ("created_at", "level", "meanings", "t_count", "updated_at", "words") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Wed, 26 Dec 2012 10:10:52 UTC +00:00], ["level", nil], ["meanings", "{\"translation\":[\"国王\"],\"basic\":{\"phonetic\":\"kiŋ\",\"explains\":[\"n. 国王；最有势力者；王棋\",\"vi. 统治；做国王\",\"vt. 立\\u2026为王\"]},\"query\":\"king\",\"errorCode\":0,\"web\":[{\"value\":[\"国王\",\"金\",\"君主\",\"英国\"],\"key\":\"king\"},{\"value\":[\"金刚\",\"许冠杰\",\"片\",\"大金刚\"],\"key\":\"King Kong\"},{\"value\":[\"大虾\",\"年夜虾\",\"大对虾\"],\"key\":\"King Prawns\"},{\"value\":[\"凯兰国王\"],\"key\":\"King Cailan\"},{\"value\":[\"狮子王\",\"兽王王\",\"看动画学英语\",\"成长\"],\"key\":\"Lion King\"},{\"value\":[\"扑克王\",\"片\"],\"key\":\"Poker King\"},{\"value\":[\"山丘之王\",\"山岳王\",\"山大王\",\"只提供\"],\"key\":\"Mountain King\"},{\"value\":[\"国王企鹅\",\"帝企鹅\",\"王企鹅\"],\"key\":\"king penguin\"},{\"value\":[\"王牌摄影师\",\"拍照王\",\"照相王\"],\"key\":\"Photo King\"},{\"value\":[\"卡洛尔·金\",\"卡洛金\",\"卡洛尔\",\"卡洛·金\"],\"key\":\"Carole King\"}]}"], ["t_count", 1], ["updated_at", Wed, 26 Dec 2012 10:10:52 UTC +00:00], ["words", "king"]]
+  [1m[35m (2.3ms)[0m  commit transaction
+  [1m[36mT Load (0.2ms)[0m  [1mSELECT "ts".* FROM "ts" [0m
+  Rendered ts/translate.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 253ms (Views: 3.5ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-12-26 18:10:52 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-12-26 18:10:52 +0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-12-26 18:10:52 +0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-12-26 18:10:52 +0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/ts/list" for 127.0.0.1 at 2012-12-26 18:10:56 +0800
+Processing by TsController#list as HTML
+  [1m[35mT Load (0.2ms)[0m  SELECT "ts".* FROM "ts" LIMIT 1 OFFSET 0
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "ts" [0m
+  Rendered ts/list.erb within layouts/application (13.4ms)
+Completed 200 OK in 18ms (Views: 16.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-12-26 18:10:56 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-12-26 18:10:56 +0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-12-26 18:10:56 +0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-12-26 18:10:56 +0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/ts/list" for 127.0.0.1 at 2012-12-26 18:11:33 +0800
+Processing by TsController#list as HTML
+  [1m[35mT Load (0.2ms)[0m  SELECT "ts".* FROM "ts" LIMIT 1 OFFSET 0
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "ts" [0m
+  Rendered ts/list.erb within layouts/application (5.0ms)
+Completed 200 OK in 10ms (Views: 8.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-12-26 18:11:33 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-12-26 18:11:33 +0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-12-26 18:11:33 +0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-12-26 18:11:33 +0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/ts/list?page=2" for 127.0.0.1 at 2012-12-26 18:11:35 +0800
+Processing by TsController#list as HTML
+  Parameters: {"page"=>"2"}
+  [1m[35mT Load (0.1ms)[0m  SELECT "ts".* FROM "ts" LIMIT 1 OFFSET 1
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "ts" [0m
+  Rendered ts/list.erb within layouts/application (6.1ms)
+Completed 200 OK in 10ms (Views: 8.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-12-26 18:11:35 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-12-26 18:11:35 +0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-12-26 18:11:35 +0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-12-26 18:11:35 +0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/ts/list" for 127.0.0.1 at 2012-12-26 18:11:35 +0800
+Processing by TsController#list as HTML
+  [1m[35mT Load (0.1ms)[0m  SELECT "ts".* FROM "ts" LIMIT 1 OFFSET 0
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "ts" [0m
+  Rendered ts/list.erb within layouts/application (5.6ms)
+Completed 200 OK in 10ms (Views: 8.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-12-26 18:11:35 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-12-26 18:11:35 +0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-12-26 18:11:35 +0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-12-26 18:11:35 +0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/ts/list?page=2" for 127.0.0.1 at 2012-12-26 18:11:36 +0800
+Processing by TsController#list as HTML
+  Parameters: {"page"=>"2"}
+  [1m[35mT Load (0.2ms)[0m  SELECT "ts".* FROM "ts" LIMIT 1 OFFSET 1
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "ts" [0m
+  Rendered ts/list.erb within layouts/application (5.2ms)
+Completed 200 OK in 9ms (Views: 7.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-12-26 18:11:36 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-12-26 18:11:36 +0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-12-26 18:11:36 +0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-12-26 18:11:36 +0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/ts/list" for 127.0.0.1 at 2012-12-26 18:11:37 +0800
+Processing by TsController#list as HTML
+  [1m[35mT Load (0.1ms)[0m  SELECT "ts".* FROM "ts" LIMIT 1 OFFSET 0
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "ts" [0m
+  Rendered ts/list.erb within layouts/application (5.2ms)
+Completed 200 OK in 9ms (Views: 7.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-12-26 18:11:37 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-12-26 18:11:37 +0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-12-26 18:11:37 +0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-12-26 18:11:37 +0800
+Served asset /application.js - 304 Not Modified (0ms)
+Connecting to database specified by database.yml

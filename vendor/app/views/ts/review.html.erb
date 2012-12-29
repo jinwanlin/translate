@@ -1,0 +1,24 @@
+<%= link_to 'list', ts_path %>
+
+<%= form_tag("/ts/translate", :method => "get") do %>
+	<%= text_field_tag(:words) %>
+	<%= submit_tag("Translate") %>
+<% end %>
+
+
+<%= params[:words] %><br />
+<% if @data != nil %>
+	<% @data = JSON.parse(@data) %>
+	音标：<%= @data['basic']['phonetic'] if @data['basic'].present? %><br />
+	解释：<%= @data['translation'][0] %><br />
+	
+	<% @arrs = @data['basic']['explains'] if @data['basic'].present? %>
+	<%if @arrs.present?%>
+		<% @arrs.each do |arr| %>
+			<%= arr %><br />
+		<% end %>
+	<%end%>
+<% end %>
+
+
+@users = @users.paginate :page => params[:page], :per_page => params[:per_page]

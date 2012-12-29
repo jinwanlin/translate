@@ -1,0 +1,88 @@
+<div id="content">
+	<% unless @ts.empty? %>
+	           
+		<% @data = @ts[0].meanings %><br />
+			<% if @data != nil %>
+				<% @data = JSON.parse(@data) %>
+				<h1>
+					<%= @ts[0].words %>
+			</h1>
+				 / <%= @data['basic']['phonetic'] if @data['basic'].present? %> / <%= @data['translation'][0] %>
+			
+				<br /><br />
+				<% @arrs = @data['basic']['explains'] if @data['basic'].present? %>
+				<%if @arrs.present?%>
+					<% @arrs.each do |arr| %>
+						<%= arr %><br />
+					<% end %>
+				<%end%>
+			<% end %>
+
+	<% end %>
+</div>
+
+<%= link_to 'Back', ts_path %>
+
+<%= paginate @ts %> 
+
+
+
+
+
+<script>
+$(function(){
+	//nextWords($("#body"))
+	$("#body").keyup(function(event) { //4.5.1 让文本框可以响应键盘事件 /*event是Firefox获取键值需要的参数*/
+	    var myEvent = event || window.event; //获取当前用户按下的键值, 解决不同浏览器获取事件对象的差异
+	    var kcode = myEvent.keyCode;
+			
+			if (kcode == 37){ //left
+				node = $("a[rel='prev']")
+				if (node.length > 0 ){
+					url = node.attr("href")
+					location.href=url
+			  }else{
+					$("#content").html('<h1>已经是第一个了</h1>')
+				}
+			}else if (kcode == 38){ //up
+					
+				
+			}else if (kcode == 39){ //right
+				node = $("a[rel='next']")
+				if (node.length > 0 ){
+					url = node.attr("href")
+					location.href=url
+			  }else{
+					$("#content").html('<h1>已经是最后一个了</h1>')
+				}
+				
+			}else if (kcode == 40){ //down
+				
+			}
+			
+	    // if (kcode == 37) { //按下了回车键, 将保存修改
+	    // 	        var inputnode = $(this);
+	    // 	        var inputtext = inputnode.val();//2.获取当前文本框的内容
+	    // 	        var tdNode = inputnode.parent();//3.清空td里面的内容
+	    // 	        tdNode.html(inputtext); //4.将保存的文本框的内容填充到td中
+	    // 	        tdNode.click(tdclick);//5.让td重新拥有点击事件
+	    // 
+	    // 	    } else if (kcode == 27) { //按下了esc键, 将不保存修改
+	    // 	        var inputnode = $(this);
+	    // 	        var tdNode = inputnode.parent();//3.清空td里面的内容
+	    // 	        tdNode.html(text); //4.将保存的表格文本内容填充到td中
+	    // 	        tdNode.click(tdclick); //5.让td重新拥有点击事件
+	    // 	    }
+	    // 
+	    // $("#name").focus(function() {
+	    //     $("#name").addClass("focus");
+	    //});
+			
+
+	});
+})
+
+
+
+
+</script>

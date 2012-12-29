@@ -1,0 +1,23 @@
+<a style="float:right" href="/ts/list">背单词</a>
+
+<%= form_tag("/ts/translate", :method => "get") do %>
+	<%= text_field_tag(:words) %>
+	<%= submit_tag("Translate") %>
+<% end %>
+
+<table>
+  <tr>
+    <th width=300>单词</th>
+    <th>查询次数</th>
+    <th></th>
+  </tr>
+
+<% @ts.each do |t| %>
+  <tr>
+    <td><%= link_to t.words, {:controller => "ts", :action => "translate", :words => t.words} %></td>
+    <td><%= t.t_count %></td>
+    <td><%= link_to 'Destroy', t, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
